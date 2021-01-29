@@ -9,10 +9,16 @@
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
 
+import Store from 'storage/storage'
+
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
     HelloWorld
+  },
+  created () {
+    Store.setItem("aa", "aaaaa")
+    console.log()
   }
 }
 </script>
