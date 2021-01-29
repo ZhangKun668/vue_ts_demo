@@ -19,6 +19,7 @@ module.exports = {
   lintOnSave: false,
   pluginOptions: {},
   devServer: {
+    inline: true,
     overlay: {
       warning: false,
       errors: false
