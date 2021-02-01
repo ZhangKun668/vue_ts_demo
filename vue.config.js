@@ -7,17 +7,8 @@ function resolve(dir) {
 module.exports = {
   publicPath: "/",
   outputDir: "dist",// 当运行 build 时生成的生产环境构建文件的目录。
-  chainWebpack: config => {
-    // 配置文件路径别名
-    config.resolve.alias
-      .set("@", resolve("src"))
-      .set("storage", resolve("src/storage"))
-  },
-  css: {
-    loaderOptions: {}
-  },
+  assetsDir: "static",// 静态资源存放路径
   lintOnSave: false,
-  pluginOptions: {},
   devServer: {
     inline: true,
     overlay: {
@@ -37,4 +28,22 @@ module.exports = {
       },
     }
   },
+  css: {
+    loaderOptions: {
+      postcss: {
+        plugins: [
+          require("postcss-px2rem")({
+            remUnit: 37.5,// 设置一倍方案
+          })
+        ]
+      },
+    }
+  },
+  pluginOptions: {},
+  chainWebpack: (config) => {
+    // 设置路径别名
+    config.resolve.alias
+      .set("@", resolve("src"))
+  },
+  configureWebpack: {}
 }

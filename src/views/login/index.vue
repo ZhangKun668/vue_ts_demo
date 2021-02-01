@@ -8,6 +8,8 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 
+import Store from "@/storage/storage"
+
 @Component({
   name: "LoginPage",
   props: {},
@@ -17,7 +19,7 @@ export default class Login extends Vue {
   data = "";
 
   created () {
-    
+
   }
 };
 </script>

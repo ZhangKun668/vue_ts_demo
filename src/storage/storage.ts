@@ -17,6 +17,10 @@ class Store {
   removeItem(key: string, type: string = "session") {
     storeFunctionName[type].removeItem(key);
   }
+
+  clear(type: string = "session") {
+    storeFunctionName[type].clear();
+  }
 }
 
 export default new Store();
