@@ -37,6 +37,9 @@ module.exports = {
           })
         ]
       },
+      sass: {
+        prependData: `@import "src/styles/defalut.scss";`
+      }
     }
   },
   pluginOptions: {},
