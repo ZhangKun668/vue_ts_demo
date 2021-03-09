@@ -10,12 +10,12 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 
-import routerTransition from "@/components/routerTransition/index";
+import RouterTransition from "@/components/routerTransition/index.vue";
 
 @Component({
   name: "App",
   components: {
-    routerTransition,
+    RouterTransition,
   }
 })
 export default class App extends Vue {
